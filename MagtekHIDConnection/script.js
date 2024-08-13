@@ -28,7 +28,7 @@ function getDeviceReport(e){
 function sendReport(){
     const reportId = 0x00
     //AA0081040155180384081803810100820114 = display message
-    var hexArray = fromStringToHexStringArray("AA0081040155180384081803810100820114") 
+    var hexArray = fromStringToHexStringArray("AA00810401121F0184021F01") 
     const packets = fromHexStringArrayToPackets(hexArray)//new Uint8Array([0, 18, 170, 0, 129, 4, 1, 85, 24, 3, 132, 8, 24, 3, 129, 1, 0, 130, 1, 21])
     for(let i = 0; i < packets.length; i++){
         hidDevice.sendReport(0, packets[i])
